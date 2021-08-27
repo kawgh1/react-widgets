@@ -6,8 +6,8 @@
 
 ## Hooks Notes
 
-![hooks-system]
+![hooks-system](https://github.com/kawgh1/react-widgets/blob/main/hooks-system.png)
 
-![primitive-hooks]
+![primitive-hooks](https://github.com/kawgh1/react-widgets/blob/main/primitive-hooks.png)
 
-![custom-hooks]
+![custom-hooks](https://github.com/kawgh1/react-widgets/blob/main/cutsom-hooks.png)
