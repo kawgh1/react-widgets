@@ -1,10 +1,14 @@
-## Simple React Project exploring Hooks
+# Simple React Project exploring Hooks
 
-- ### Each Component Widget makes use of different hooks
-    - #### Accordion - useState
-    - #### List - useState, useEffect
-    - #### Dropdown - useState, useEffect, useRef
-    - #### Translate - useState, useEffect, useRef
+- ## Each Component Widget makes use of different hooks
+    - ### Accordion 
+        - **useState**
+    - ### List 
+        - **useState, useEffect**
+    - ### Dropdown 
+        - **useState, useEffect, useRef**
+    - ### Translate 
+        - **useState, useEffect, useRef**
 
 ## Tools Used
 - Semantic UI
