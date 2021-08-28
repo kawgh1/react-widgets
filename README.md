@@ -1,5 +1,11 @@
 ## Simple React Project exploring Hooks
 
+- ### Each Component Widget makes use of different hooks
+    - #### Accordion - useState
+    - #### List - useState, useEffect
+    - #### Dropdown - useState, useEffect, useRef
+    - #### Translate - useState, useEffect, useRef
+
 ## Tools Used
 - Semantic UI
     - <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
@@ -16,13 +22,25 @@
                 const things = useState(null);
                 const activeIndex = things[0];
                 const setActiveIndex = things[1];
+
+                const onTitleClicked = (index) => {
+                    setActiveIndex(index);
+                }
             }
+
+      
 
             // is the same as
 
             const Accordion = ({ items }) => {
                 const [activeIndex, setActiveIndex] = useState(null);
+
+                const onTitleClicked = (index) => {
+                    setActiveIndex(index);
+                }
             }
+
+            
 
     - no new array is being created
     - `activeIndex` is a piece of State we are trying to keep track of
@@ -39,6 +57,22 @@
     - **const [ name, setName ] = useState("");**
     - **const [ counter, setCounter ] = useState(0);**
     - **const [ color, setColor ] = useState("green");**
+
+    export default function App() {
+    
+        const [ count, setCount ] = useState(0);
+        
+        const onButtonClick = () => {
+            setCount(count+1);
+        };
+        
+        return (
+            <div>
+                <button onClick={onButtonClick}>Click Me!</button>
+                <h1>Current Count: {count}</h1>
+            </div>
+        );
+    }
 
 - ### Class Components vs Function Components w/ Hooks
 
