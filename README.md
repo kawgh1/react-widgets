@@ -14,10 +14,12 @@
       - For API calls - fetch, etc.
 
 ## Things I Learned
-- dangerouslySetInnerHTML - vulnerable to XSS attacks 
+- ### dangerouslySetInnerHTML - vulnerable to XSS attacks 
   - by passing HTML code from a third-party into a Component Function we run the risk of receiving malicious JS or other code within that HTML
   - Root takeover of our React App is possible here
   - only user dangerouslySetInnerHTML from 1qa  third-party source you trust
+  
+        <span dangerouslySetInnerHTML={{ __html: result.snippet }}></span>
 
 ## Hooks Notes
 - ### Hooks System
@@ -149,6 +151,9 @@
             });
             
         }, [term]);
+- ## useEffect()'s Cleanup Function
+  - does not run on initial render
+  - runs first on every subsequent re-render
 
 - ### Class Components vs Function Components w/ Hooks
 

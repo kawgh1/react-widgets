@@ -28,9 +28,28 @@ const Search = () => {
             setResults(data.query.search);
         }
 
-        search();
-        
+        // if initial render (no results) run search immediately to display default content
+        if (term && !results.length) {
+            search();
+        } else {
+
+            // wait 600 ms bef
+        const timeoutId = setTimeout(() => {
+            if (term) {
+                search();
+                }
+        }, 600);
+
+            // CLEAN UP FUNCTION
+            return () => {
+                clearTimeout(timeoutId);
+            };
+            
+          }
+
     }, [term]);
+
+        
 
      // THIS IS NOT ALLOWED - Cannot pass useEffect() an async function or have an await inside the callback
     //  useEffect(async () => {
@@ -43,6 +62,11 @@ const Search = () => {
 
         return (
             <div className='item' key={result.pageid}>
+            <div className='right floated content'>
+                <a className='ui button'
+                href={`https://en.wikipedia.org?curid=${result.pageid}`}
+                target="_blank" rel="noreferrer">Go</a>
+            </div>
                 <div className='content'>
                     <div className='header'>
                         {result.title}
