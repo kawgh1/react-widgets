@@ -7,7 +7,7 @@
 ## Hooks Notes
 - ### Hooks System
 ![hooks-system](https://github.com/kawgh1/react-widgets/blob/main/hooks-system.png)
-- useState()
+- ## useState()
     - probably the most common hook
   
         File: Accordion.js
@@ -33,9 +33,7 @@
    - `useState(null)`
        - takes one argument and that will be the `default` value for that piece of State defined by `activeIndex`
 
-    const Accordion = ({ items }) => {
-                const [activeIndex, setActiveIndex] = useState(null);
-            }
+    ![setstate]()
 
 - ### Primitive Hooks
 ![primitive-hooks](https://github.com/kawgh1/react-widgets/blob/main/primitive-hooks.png)
