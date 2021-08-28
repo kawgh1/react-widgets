@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import Accordion from './components/Accordian'
 import Search from './components/Search';
 import Dropdown from './components/Dropdown';
@@ -36,16 +36,21 @@ const options = [
 ];
 
 
-class App extends React.Component {
+// eslint-disable-next-line import/no-anonymous-default-export
+export default () => {
 
-    render() {
+    const [selected, setSelected] = useState(options[0]);
+
     return (
         // <Accordion items={items}/>
         // <Search />
-        <Dropdown options={options}/>
+        <Dropdown 
+            selected={selected}
+            onSelectedChange={setSelected} 
+            options={options}
+
+            />
     
     );
-    }
+    
 };
-
-export default App;

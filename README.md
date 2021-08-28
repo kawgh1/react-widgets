@@ -21,6 +21,23 @@
   
         <span dangerouslySetInnerHTML={{ __html: result.snippet }}></span>
 
+- ### How to close Dropdowns by clicking elsewhere in the DOM
+- #### The DOM
+    - html
+        - body
+            - div#root
+                - Dropdown Component
+                    - div.ui.form
+                        - div.ui.selection **onClick**
+                            - div.ui.menu
+                                - div.item **onClick**
+                                - div.item **onClick**
+                                - div.item **onClick**
+
+    - The Dropdown Component needs to detect a `click event` on ***any element*** besides one it created
+    - The Dropdown Component has a hard time setting up `event handlers` on elements that it does not create
+    - Event Bubbling is a thing
+
 ## Hooks Notes
 - ### Hooks System
 ![hooks-system](https://github.com/kawgh1/react-widgets/blob/main/diagrams/hooks-system.png)
