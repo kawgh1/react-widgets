@@ -18,10 +18,15 @@ const items = [
 ];
 
 
-export default () => {
+class App extends React.Component {
 
+    render() {
     return (
         <Accordion items={items}/>
-    );
     
+    
+    );
+    }
 };
+
+export default App;
