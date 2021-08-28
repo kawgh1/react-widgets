@@ -42,20 +42,26 @@
             - A click on any element will bubble up to the body!
 
                  // this is used so that clicking outside the Dropdown Component closes the Dropdown Component
-                    useEffect(() => {
-                        document.body.addEventListener("click", (event) => {
+                        useEffect(() => {
+                            const onBodyClick = (event) => {
                             // this checks - was the element clicked on inside our ref element? 
                             // <div ref={ref} className='ui form'>?
                             if (ref.current.contains(event.target)) {
-                                // then do nothing
-                                return
+                                return;
                             }
-                            // otherwise, close the dropdown (click was outside dropdown)
                             setOpen(false);
-                        },
-                        { capture: true }
-                        );
-                    }, []);
+                            };
+
+                            document.body.addEventListener("click", onBodyClick, { capture: true });
+                        
+                            // useEffect CleanUp function
+                            return () => {
+                                // turn off the body click listener if the dropdown is not visible
+                                document.body.removeEventListener("click", onBodyClick, {
+                                    capture: true,
+                                });
+                            };
+                        }, []);
     - #### Reference
         - https://reactjs.org/blog/2020/08/10/react-v17-rc.html#fixing-potential-issues
 

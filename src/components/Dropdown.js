@@ -7,18 +7,28 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
     const ref = useRef();
 
     // this is used so that clicking outside the Dropdown Component closes the Dropdown Component
+    
     useEffect(() => {
-        document.body.addEventListener("click", (event) => {
-            // this checks - was the element clicked on inside our ref element? 
-            // <div ref={ref} className='ui form'>?
-            if (ref.current.contains(event.target)) {
-                return
-            }
-            setOpen(false);
-          },
-          { capture: true }
-        );
+        const onBodyClick = (event) => {
+        // this checks - was the element clicked on inside our ref element? 
+        // <div ref={ref} className='ui form'>?
+          if (ref.current.contains(event.target)) {
+            return;
+          }
+          setOpen(false);
+        };
+        document.body.addEventListener("click", onBodyClick, { capture: true });
+     
+        // useEffect CleanUp function
+        return () => {
+            // turn off the body click listener if the dropdown is not visible
+          document.body.removeEventListener("click", onBodyClick, {
+            capture: true,
+          });
+        };
       }, []);
+    
+    
 
     const renderedOptions = options.map((option) => {
 
