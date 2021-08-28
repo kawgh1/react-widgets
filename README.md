@@ -2,7 +2,7 @@
 
 - ## Each Component Widget makes use of different hooks
     - ### Accordion - **useState**
-    - ### List - **useState, useEffect**
+    - ### Search - **useState, useEffect**
     - ### Dropdown - **useState, useEffect, useRef**
     - ### Translate - **useState, useEffect, useRef**
 
@@ -73,6 +73,13 @@
             </div>
         );
     }
+
+- ## useEffect()
+  - Allows Function Components to use ***something like*** LifeCycle Methods
+  - **We configure the hook to run some code automatically in one of three scenarios**
+      - 1. When the Component is rendered *for the first time* ***only***
+      - 2. When the Component is rendered ***for the first time AND any other time it re-renders after that***
+      - 3. When the Component is rendered **for the first time AND any other time it re-renders after that AND some piece of Component data has changed**
 
 - ### Class Components vs Function Components w/ Hooks
 
