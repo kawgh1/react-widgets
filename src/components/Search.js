@@ -8,6 +8,11 @@ const Search = () => {
 
     // useEffect
     useEffect(() => {
+        const search = async () => {
+            await axios.get('someUrl');
+        }
+
+        search();
         
     }, [term]);
 

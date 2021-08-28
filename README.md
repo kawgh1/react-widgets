@@ -105,11 +105,44 @@
             }, [term]);
 
 
- - #### THIS IS NOT ALLOWED - Cannot pass useEffect() an **async** function or have an **await** inside the callback
+ - #### THIS IS NOT ALLOWED - Cannot directly pass useEffect() an **async** function or have an **await** inside the callback
   
-     useEffect(async () => {
-        await axios('asaasdf');
-    }, [term]);
+
+        useEffect(async () => {
+            await axios('someUrl');
+        }, [term]);
+
+- ### Have to write it like this
+
+        useEffect(() => {
+            const search = async () => {
+                await axios.get('someUrl');
+            }
+
+            search();
+            
+        }, [term]);
+
+        // or this - same thing
+
+        useEffect(() => {
+            
+            (async () => {
+                await axios.get('someUrl');
+            })();
+            
+        }, [term]);
+
+        // or just use regular Promises
+
+        useEffect(() => {
+            
+            axios.get('someUrl')
+            .then((response) => {
+                console.log(response.data);
+            });
+            
+        }, [term]);
 
 - ### Class Components vs Function Components w/ Hooks
 
