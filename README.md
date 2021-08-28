@@ -6,7 +6,7 @@
 
 ## Hooks Notes
 - ### Hooks System
-![hooks-system](https://github.com/kawgh1/react-widgets/blob/main/hooks-system.png)
+![hooks-system](https://github.com/kawgh1/react-widgets/blob/main/hooks-system1.png)
 - ## useState()
     - probably the most common hook
   
@@ -33,7 +33,7 @@
    - `useState(null)`
        - takes one argument and that will be the `default` value for that piece of State defined by `activeIndex`
 
-    ![setstate](https://github.com/kawgh1/react-widgets/blob/main/setstate.png)
+    ![setstate](https://github.com/kawgh1/react-widgets/blob/main/setstate1.png)
 - Examples
     - **const [ activeIndex, setActiveIndex ] = useState(null);**
     - **const [ name, setName ] = useState("");**
@@ -42,11 +42,11 @@
 
 - ### Class Components vs Function Components w/ Hooks
 
-![class-vs-functions-with-hooks](https://github.com/kawgh1/react-widgets/blob/main/class-vs-functions-with-hooks.png)
+![class-vs-functions-with-hooks](https://github.com/kawgh1/react-widgets/blob/main/class-vs-functions-with-hooks1.png)
 - ### Primitive Hooks
-![primitive-hooks](https://github.com/kawgh1/react-widgets/blob/main/primitive-hooks.png)
+![primitive-hooks](https://github.com/kawgh1/react-widgets/blob/main/primitive-hooks1.png)
 
 
 
 - ### Custom Hooks
-![custom-hooks](https://github.com/kawgh1/react-widgets/blob/main/cutsom-hooks.png)
+![custom-hooks](https://github.com/kawgh1/react-widgets/blob/main/cutsom-hooks1.png)
