@@ -36,13 +36,13 @@
     ![setstate](https://github.com/kawgh1/react-widgets/blob/main/setstate.png)
 - Examples
     - **const [ activeIndex, setActiveIndex ] = useState(null);**
-    - **const [ name, setName ] = useState('');**
+    - **const [ name, setName ] = useState("");**
     - **const [ counter, setCounter ] = useState(0);**
     - **const [ color, setColor ] = useState("green");**
 
 - ### Class Components vs Function Components w/ Hooks
 
-![class-vs-functions-with-hooks]()
+![class-vs-functions-with-hooks](https://github.com/kawgh1/react-widgets/blob/main/class-vs-functions-with-hooks.png)
 - ### Primitive Hooks
 ![primitive-hooks](https://github.com/kawgh1/react-widgets/blob/main/primitive-hooks.png)
 
