@@ -33,8 +33,16 @@
    - `useState(null)`
        - takes one argument and that will be the `default` value for that piece of State defined by `activeIndex`
 
-    ![setstate]()
+    ![setstate](https://github.com/kawgh1/react-widgets/blob/main/setstate.png)
+- Examples
+    - **const [ activeIndex, setActiveIndex ] = useState(null);**
+    - **const [ name, setName ] = useState('');**
+    - **const [ counter, setCounter ] = useState(0);**
+    - **const [ color, setColor ] = useState("green");**
 
+- ### Class Components vs Function Components w/ Hooks
+
+![class-vs-functions-with-hooks]()
 - ### Primitive Hooks
 ![primitive-hooks](https://github.com/kawgh1/react-widgets/blob/main/primitive-hooks.png)
 
