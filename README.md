@@ -9,6 +9,9 @@
 ## Tools Used
 - Semantic UI
     - <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+- AXIOS
+  - **$ npm install axios**
+      - For API calls - fetch, etc.
 
 ## Hooks Notes
 - ### Hooks System
@@ -80,26 +83,33 @@
       - Option 1). When the Component is rendered *for the first time* ***only***
       - Option 2). When the Component is rendered ***for the first time AND any other time it re-renders after that***
       - Option 3). When the Component is rendered **for the first time AND (any other time it re-renders after that AND some piece of Component data has changed)**
-  - Which option to be used is determined by the **second argument** passed into **useEffect(() => {}, ___ )**
+  - Which option to be used is determined by the **second argument** passed into **useEffect(( ) => {...}, ___ )**
 
 
             // Option 1 - [] - run on initial render
 
             useEffect(() => {
-                console.log('asasdf')
+                console.log('I ONLY RUN ONCE')
             }, []);
 
             // Option 2 - ...nothing... - run at initial render and every re-render
 
             useEffect(() => {
-                console.log('asasdf')
+                console.log('I RUN AT INITIAL RENDER AND AFTER EVERY RE-RENDER')
             });
 
             // Option 3 - [data] - run at initial render and run after every re-render if data has changed
 
             useEffect(() => {
-                console.log('asasdf')
+                console.log('I RUN AT INITIAL RENDER AND AFTER EVERY RE-RENDER IF COMPONENT DATA HAS CHANGED')
             }, [term]);
+
+
+ - #### THIS IS NOT ALLOWED - Cannot pass useEffect() an **async** function or have an **await** inside the callback
+  
+     useEffect(async () => {
+        await axios('asaasdf');
+    }, [term]);
 
 - ### Class Components vs Function Components w/ Hooks
 

@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import axios from 'axios';
 
 const Search = () => {
 
@@ -7,8 +8,13 @@ const Search = () => {
 
     // useEffect
     useEffect(() => {
-        console.log('asasdf')
-    });
+        
+    }, [term]);
+
+     // THIS IS NOT ALLOWED - Cannot pass useEffect() an async function or have an await inside the callback
+    //  useEffect(async () => {
+    //     await axios('asaasdf');
+    // }, [term]);
 
     return (
     
