@@ -76,10 +76,25 @@
 
 - ## useEffect()
   - Allows Function Components to use ***something like*** LifeCycle Methods
-  - **We configure the hook to run some code automatically in one of three scenarios**
-      - 1. When the Component is rendered *for the first time* ***only***
-      - 2. When the Component is rendered ***for the first time AND any other time it re-renders after that***
-      - 3. When the Component is rendered **for the first time AND any other time it re-renders after that AND some piece of Component data has changed**
+  - **We configure the useEffect() hook to run some code automatically in one of three scenarios**
+      - 1). When the Component is rendered *for the first time* ***only***
+      - 2). When the Component is rendered ***for the first time AND any other time it re-renders after that***
+      - 3). When the Component is rendered **for the first time AND (any other time it re-renders after that AND some piece of Component data has changed)**
+
+        // Option 1 - [] - run on inital render
+        useEffect(() => {
+            console.log('asasdf')
+        }, []);
+
+        // Option 2 - ...nothing... - run at initial render and every re-render
+        useEffect(() => {
+            console.log('asasdf')
+        });
+
+        // Option 3 - [data] - run at initial render and run after every re-render if data has changed
+        useEffect(() => {
+            console.log('asasdf')
+        }, [term]);
 
 - ### Class Components vs Function Components w/ Hooks
 

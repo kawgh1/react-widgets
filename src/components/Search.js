@@ -1,8 +1,14 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 const Search = () => {
 
+    // useState
     const [term, SetTerm] = useState('');
+
+    // useEffect
+    useEffect(() => {
+        console.log('asasdf')
+    });
 
     return (
     
