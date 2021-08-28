@@ -1,6 +1,7 @@
 import React from 'react'
 import Accordion from './components/Accordian'
 import Search from './components/Search';
+import Dropdown from './components/Dropdown';
 
 
 const items = [
@@ -18,13 +19,30 @@ const items = [
     },
 ];
 
+// since this is a static array that won't change, doesn't matter where we define it
+const options = [
+    {
+        label: 'The Color Red',
+        value: 'red'
+    },
+    {
+        label: 'The Color Green',
+        value: 'green'
+    },
+    {
+        label: 'The Color Blue',
+        value: 'blue'
+    },
+];
+
 
 class App extends React.Component {
 
     render() {
     return (
         // <Accordion items={items}/>
-        <Search />
+        // <Search />
+        <Dropdown options={options}/>
     
     );
     }
