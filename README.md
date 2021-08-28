@@ -22,21 +22,42 @@
         <span dangerouslySetInnerHTML={{ __html: result.snippet }}></span>
 
 - ### How to close Dropdowns by clicking elsewhere in the DOM
-- #### The DOM
-    - html
-        - body
-            - div#root
-                - Dropdown Component
-                    - div.ui.form
-                        - div.ui.selection **onClick**
-                            - div.ui.menu
-                                - div.item **onClick**
-                                - div.item **onClick**
-                                - div.item **onClick**
+    - #### The DOM
+        - html
+            - body
+                - div#root
+                    - Dropdown Component
+                        - div.ui.form
+                            - div.ui.selection **onClick**
+                                - div.ui.menu
+                                    - div.item **onClick**
+                                    - div.item **onClick**
+                                    - div.item **onClick**
 
-    - The Dropdown Component needs to detect a `click event` on ***any element*** besides one it created
-    - The Dropdown Component has a hard time setting up `event handlers` on elements that it does not create
-    - Event Bubbling is a thing
+        - The Dropdown Component needs to detect a `click event` on ***any element*** besides one it created
+        - The Dropdown Component has a hard time setting up `event handlers` on elements that it does not create
+        - Event Bubbling is a thing
+    - #### Solution
+        - The Dropdown Component can set up a `manual event listener` (without React) on the body element.
+            - A click on any element will bubble up to the body!
+
+                 // this is used so that clicking outside the Dropdown Component closes the Dropdown Component
+                    useEffect(() => {
+                        document.body.addEventListener("click", (event) => {
+                            // this checks - was the element clicked on inside our ref element? 
+                            // <div ref={ref} className='ui form'>?
+                            if (ref.current.contains(event.target)) {
+                                // then do nothing
+                                return
+                            }
+                            // otherwise, close the dropdown (click was outside dropdown)
+                            setOpen(false);
+                        },
+                        { capture: true }
+                        );
+                    }, []);
+    - #### Reference
+        - https://reactjs.org/blog/2020/08/10/react-v17-rc.html#fixing-potential-issues
 
 ## Hooks Notes
 - ### Hooks System
