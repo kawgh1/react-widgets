@@ -13,6 +13,12 @@
   - **$ npm install axios**
       - For API calls - fetch, etc.
 
+## Things I Learned
+- dangerouslySetInnerHTML - vulnerable to XSS attacks 
+  - by passing HTML code from a third-party into a Component Function we run the risk of receiving malicious JS or other code within that HTML
+  - Root takeover of our React App is possible here
+  - only user dangerouslySetInnerHTML from 1qa  third-party source you trust
+
 ## Hooks Notes
 - ### Hooks System
 ![hooks-system](https://github.com/kawgh1/react-widgets/blob/main/diagrams/hooks-system.png)
