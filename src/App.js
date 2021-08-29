@@ -2,6 +2,7 @@ import React, {useState, useEffect, useRef} from 'react'
 import Accordion from './components/Accordian'
 import Search from './components/Search';
 import Dropdown from './components/Dropdown';
+import Translate from './components/Translate';
 
 
 const items = [
@@ -39,16 +40,16 @@ const options = [
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
 
-    const [selected, setSelected] = useState(options[0]);
-    const [showDropdown, setShowDropdown] = useState(true);
+    // const [selected, setSelected] = useState(options[0]);
+    // const [showDropdown, setShowDropdown] = useState(true);
 
     return (
         <div>
               {/* <Accordion items={items}/> */}
         {/* <Search /> */}
-        <button onClick={() => setShowDropdown(!showDropdown)}>Toggle Dropdown</button>
+        {/* <button onClick={() => setShowDropdown(!showDropdown)}>Toggle Dropdown</button> */}
         
-        {showDropdown ?
+        {/* {showDropdown ?
             <Dropdown 
             selected={selected}
             onSelectedChange={setSelected} 
@@ -56,7 +57,10 @@ export default () => {
 
             />
             : null
-        }
+        } */}
+
+            <Translate />
+
         </div>
        
     
