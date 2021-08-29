@@ -4,7 +4,21 @@ import axios from 'axios';
 const Convert = ({ language, text }) => {
 
     const [translated, setTranslated] = useState('');
+    const [debouncedText, setDebouncedText] = useState(text);
 
+    // Hook to handle debounced text, keep from making so many API calls
+    useEffect(() => {
+        const timerId = setTimeout(() => {
+
+            setDebouncedText(text);
+        }, 750);
+
+        return () => {
+            clearTimeout(timerId);
+        };
+    }, [text]);
+
+    // Translation hook to call API
     useEffect(() => {
 
         // helper function
@@ -12,7 +26,8 @@ const Convert = ({ language, text }) => {
 
             const result = await axios.post('https://translation.googleapis.com/language/translate/v2', {}, {
             params: {
-                q: text,
+                // q: text,
+                q: debouncedText,
                 target: language.value,
                 key: 'AIzaSyCHUCmpR7cT_yDFHC98CZJy2LTms-IwDlM'
 
@@ -25,7 +40,10 @@ const Convert = ({ language, text }) => {
 
         doTranslation();
         
-    }, [language, text]);
+    // }, [language, text]);
+    // only run this hook when debouncedText changes - ie, when user stops typing for 750ms - to call API
+    }, [language, debouncedText]);
+
 
     return (
     
