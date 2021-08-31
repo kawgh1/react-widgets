@@ -29,7 +29,7 @@ const Convert = ({ language, text }) => {
                 // q: text,
                 q: debouncedText,
                 target: language.value,
-                key: 'AIzaSyCHUCmpR7cT_yDFHC98CZJy2LTms-IwDlM'
+                key: process.env.REACT_APP_GOOGLE_TRANSLATE_API_KEY
 
                 }
             });
