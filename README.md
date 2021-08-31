@@ -1,5 +1,7 @@
 # Simple React Project exploring Hooks
 
+- Live site https://relaxed-jones-1f80b2.netlify.app/
+
 - ## Each Component Widget makes use of different hooks
     - ### Accordion - **useState**
     - ### Search - **useState, useEffect**
