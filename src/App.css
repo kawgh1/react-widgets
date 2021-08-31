@@ -1,0 +1,28 @@
+body {
+	background-color: rgb(188, 227, 240);
+}
+
+input[type="text"],
+textarea {
+	background-color: rgb(22, 20, 20);
+}
+
+label {
+	color: whitesmoke;
+}
+
+.ui.container {
+	max-width: 600px !important;
+}
+.ui.secondary.pointing.menu {
+	max-width: 350px;
+}
+
+.ui.styled.accordion {
+	max-width: 300px;
+	margin-left: 25px;
+}
+
+.ui.form {
+	max-width: 300px;
+}

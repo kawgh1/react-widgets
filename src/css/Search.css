@@ -1,0 +1,41 @@
+.ui.container {
+	max-width: 600px;
+}
+
+.header {
+	font-weight: bold;
+	margin: 15px 10px;
+	font-size: 1.3rem;
+}
+
+.left.floated.content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 10px;
+	text-align: justify;
+}
+
+span {
+	max-width: 75%;
+}
+
+.ui.button {
+	margin: auto;
+	margin-left: 20px;
+	padding: 10px 12px;
+	height: 35px;
+}
+
+.ui.button:hover {
+	background-color: rgb(109, 211, 109);
+	box-shadow: 1px 1px 1px 1px;
+}
+
+.ui.form {
+	margin-left: 25px;
+}
+
+.ui.input {
+	max-width: 200px;
+}

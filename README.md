@@ -65,6 +65,35 @@
     - #### Reference
         - https://reactjs.org/blog/2020/08/10/react-v17-rc.html#fixing-potential-issues
 
+- ### Navigation w/o React Router
+    - Implement identical navigational functionality without using React Router
+        - **Why?** 
+            - **React Router has had a breaking change almost every year since it was released**
+    - #### Solution
+        - User Flow
+            - User clicks on Header Link item (ex. 'Dropdown')
+            - Change the URL, but *don't do a full page refresh*
+
+                File: Link.js
+
+                    ...
+                     const onClick = (event) => {
+
+                        event.preventDefault();
+                        // force URL change even tho we aren't loading a new page, only loading a Component
+                        window.history.pushState({}, '', href )
+                    };
+
+            - Each Route should detect the URL has changed
+            - Route should updated piece of state tracking the current pathname
+            - Each Route re-renders, showing/hiding components appropriately
+
+        - We essentially update the URL with the Link the User clicks and preventDefault of the page load
+        - This can be verified in Dev Tools under Network - clicking around should only load API calls, no bundles or logos or other running JS requests
+
+- ### Any time we set up an event listener inside of a Component, that's usually a sign we need to use the useEffect Hook
+    - Route.js
+
 ## Hooks Notes
 - ### Hooks System
 ![hooks-system](https://github.com/kawgh1/react-widgets/blob/main/diagrams/hooks-system.png)

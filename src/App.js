@@ -1,9 +1,11 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React, {useState} from 'react'
 import Accordion from './components/Accordian'
 import Search from './components/Search';
 import Dropdown from './components/Dropdown';
 import Translate from './components/Translate';
-
+import Route from './components/Route'
+import Header from './components/Header';
+import './App.css'
 
 const items = [
     {
@@ -37,14 +39,16 @@ const options = [
 ];
 
 
+
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
 
-    // const [selected, setSelected] = useState(options[0]);
+    const [selected, setSelected] = useState(options[0]);
     // const [showDropdown, setShowDropdown] = useState(true);
 
     return (
-        <div>
+        <div className='ui container' style={{ marginTop: '100px'}}>
               {/* <Accordion items={items}/> */}
         {/* <Search /> */}
         {/* <button onClick={() => setShowDropdown(!showDropdown)}>Toggle Dropdown</button> */}
@@ -59,7 +63,23 @@ export default () => {
             : null
         } */}
 
-            <Translate />
+            <Header />
+            <Route path="/">
+                <Accordion items={items} />
+            </Route>
+            <Route path="/search">
+                <Search  />
+            </Route>
+            <Route path="/dropdown">
+                <Dropdown 
+                    label="Select a Color"
+                    selected={selected}
+                    onSelectedChange={setSelected} 
+                    options={options}  />
+            </Route>
+            <Route path="/translate">
+                <Translate  />
+            </Route>
 
         </div>
        
