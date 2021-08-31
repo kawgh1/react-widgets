@@ -37,7 +37,7 @@ const Translate = () => {
             <div className='ui form'>
                 <div className='field'>
                 <label>Enter Text</label>
-                <input value={text} onChange={(event) => setText(event.target.value)}/>
+                <input value={text} maxLength="100" onChange={(event) => setText(event.target.value)}/>
                 </div>
             </div>
             
